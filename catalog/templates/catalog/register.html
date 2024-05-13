@@ -1,0 +1,19 @@
+{% extends 'catalog/base.html' %}
+<!--User Registration Page -->
+{% block content %}
+<section class="user-registration-title">
+    <h2>Register to create an account, please provide a correct mailing address for purchase fulfilment</h2>
+</section>
+
+
+<!--User Registration Form -->
+<div class="user-registration">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+</div>
+
+
+{% endblock %}

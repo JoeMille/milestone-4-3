@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!-- User greeting confirming authenticated users-->
+<div class="user-greeting">
+  <h2>Welcome: {{ user.username }}</h2>
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+</div>
+{% else %}
+<!-- Login form for unauthenticated users -->
+<div class="login-page-welcome">
+  <h2>Welcome!</h2>
+  <p>Login here,<a href="{% url 'register' %}">signup</a> here or browse as our guest</p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+</div>
+{% endif %}
+
+
+{% endblock %}

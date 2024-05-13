@@ -1,0 +1,121 @@
+{% extends 'catalog/base.html' %}
+{% load static %}
+
+<!-- Home Page User Greeting -->
+{% block content %}
+{% if user.is_authenticated %}
+<div class="user-greeting">
+  <h2>Welcome: {{ user.username }}</h2>
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+</div>
+{% endif %}
+
+<!-- Home Page content -->
+
+<!-- Index Title-->
+<section class="index-title-section">
+  <h2>Heavy Metal Modern Machinery</h2>
+  </section>
+
+  <!-- Info Cards -->
+<section class="info-cards">
+  <div class="info-card">
+    <i class="bi bi-truck"></i>
+    <h3>Free Shipping</h3>
+    <p>Free shipping on all orders over $50</p>
+  </div>
+  <div class="info-card">
+    <i class="bi bi-credit-card"></i>
+    <h3>Secure Payment</h3>
+    <p>Secure payment with SSL encryption</p>
+  </div>
+  <div class="info-card">
+    <i class="bi bi-headset"></i>
+    <h3>24/7 Support</h3>
+    <p>24/7 customer support</p>
+  </div>
+</section>
+
+<!-- Main Image Carousel -->
+<div class="carousel-container">
+  <div class="image-carousel">
+      <div class="carousel__track-container">
+          <ul class="carousel__track">
+              <li class="carousel__slide current-slide">
+                  <img class="carousel__image" src="{% static 'catalog/images/chainsaw1-handle.webp' %}" alt="Image 1">
+              </li>
+              <li class="carousel__slide">
+                  <img class="carousel__image" src="{% static 'catalog/images/6015-profile.jpeg' %}" alt="Image 2">
+              </li>
+              <li class="carousel__slide">
+                  <img class="carousel__image" src="{% static 'catalog/images/pole-saw-action.webp' %}" alt="Image 3">
+              </li>
+              <li class="carousel__slide">
+                  <img class="carousel__image" src="{% static 'catalog/images/1470g-cutter.jpg' %}" alt="Image 4">
+              </li>
+              <li class="carousel__slide">
+                  <img class="carousel__image" src="{% static 'catalog/images/572XP1-valley.jpeg' %}" alt="Image 5">
+              </li>
+              <li class="carousel__slide">
+                  <img class="carousel__image" src="{% static 'catalog/images/echo-hc-action.jpeg' %}" alt="Image 6">
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Featured Products -->
+<div class="featured-product-title">
+  <h2>FEATURED PRODUCTS</h2>
+  <p>Our most popular products to date, check out our shop for
+    more products and services.
+  </p>
+</div>
+
+<!-- Featured Products Generator-->
+<div class="index-featured-products">
+  {% for product in featured_products|slice:":3" %}
+    <div class="product">
+      <h3>{{ product.title }}</h3> 
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+      <p>Price: ${{ product.price }}</p>
+      <p>{{ product.description }}</p> 
+    </div>
+  {% empty %}
+    <p>No featured products at this time.</p>
+  {% endfor %}
+</div>
+
+<!-- About Section -->
+<div class="index-profile">
+  <h2>Welcome to Heavy Metal Modern Machinery</h2>
+  <p>Please login or register and browse our collection of outdoor machinery....</p><br>
+  <p>Heavy Metal Modern Machinery is a leading provider of outdoor machinery and equipment. 
+    We offer a wide range of products, including chainsaws, pole saws, cutters, and more. 
+    Our products are designed to meet the needs of both professionals and hobbyists, and we 
+    are committed to providing the highest quality products at competitive prices.</p><br>
+</div>
+
+<!-- Image Container -->
+<div class="image-container2">
+  <img src="{% static 'catalog/images/572XP1-valley.jpeg' %}" alt="Image 1">
+  <img src="{% static 'catalog/images/echo-hc-action.jpeg' %}" alt="Image 2">
+  <img src="{% static 'catalog/images/1470g-uphill.jpg' %}" alt="Image 3">
+  <img src="{% static 'catalog/images/welding-fit2.webp' %}" alt="Image 4">
+</div>
+
+
+<!-- Further Information-->
+
+<section class="further-info">
+  <h2>Further Information</h2>
+  <p>For more information on our products, please visit our <a href="{% url 'products' %}">products page</a>.</p>
+  <p>To get in touch, please drop us a message at heavymetalmodernmachinery.com!</p>
+</section>
+
+
+
+{% endblock %}

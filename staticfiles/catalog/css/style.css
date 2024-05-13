@@ -1,0 +1,909 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    background-image: url('../images/forest-backgroubnd.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+
+/* Base.html styles */
+
+  
+.site-header {
+    background-color: rgb(68, 37, 117);
+    background-image: url('../images/heavy-metal-logo.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    font-family: "Lobster", sans-serif;
+    font-weight: bold; 
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(20, 23, 49);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 2s ease-in-out;
+    opacity: 0.95;
+    background-position: center;
+}
+
+.site-header h1, .site-header h2 {
+    display: block;
+}
+
+/* Media query for small screens */
+@media only screen and (max-width: 768px) {
+    .site-header {
+        font-size: 40px;
+        height: 200px;
+    }
+}
+
+/* Nav bar */
+.site-nav ul {
+    font-family: "Rubik Scribble", sans-serif;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    position: relative;
+    z-index: 4;
+}
+
+.site-nav li {
+    background-color:black; /* Set the background color */
+    color: white; /* Set the font color */
+    border: 1px solid #000;
+    padding: 18px 36px; 
+    margin: 5px; 
+    border-radius: 5px;
+    width: 180px; 
+    height: 90px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Add box shadow */
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: white; /* Set the font color */
+    font-size: 1.8em; 
+}
+
+/* Styles for small screens */
+@media (max-width: 600px) {
+    .site-nav li {
+        width: auto; /* Make the list items take up only as much space as needed */
+        height: auto; /* Make the list items take up only as much space as needed */
+        padding: 10px; /* Reduce the padding */
+    }
+
+    .site-nav a {
+        font-size: 0; /* Hide the text */
+    }
+
+    .site-nav i {
+        font-size: 24px; /* Set the size of the icons */
+    }
+}
+
+
+/* basket styling */
+
+.basket-info {
+    position: fixed;
+    right: 0;
+    background-color: black;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-family: "Lobster", sans-serif;
+    color: white;
+    z-index: 1000;
+}
+
+.basket-info p {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 0 10px;
+}
+
+/* CSS for mobile and small devices */
+@media only screen and (max-width: 480px) {
+    .basket-info {
+        display: none;
+    }
+}
+/* login page welcome */
+.login-page-welcome {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: black;
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+}
+
+.login-page-welcome h2 {
+    font-family: "Rubik Scribble", sans-serif;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px), only screen and (max-width: 480px) {
+    .login-page-welcome {
+        position: static;
+        max-width: 100%;
+    }
+}
+
+/* user greeting */
+.user-greeting {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: black;
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+}
+
+.user-greeting h2 {
+    font-family: "Rubik Scribble", sans-serif;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px), only screen and (max-width: 480px) {
+    .user-greeting {
+        position: static;
+        max-width: 100%;
+    }
+}
+
+/* Index about styling */
+.index-title-section {
+    background-color:  black;
+    color: white;
+    font-family: "Anton", sans-serif;
+    font-size: large;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Increase the bottom margin */
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.9); /* Increase the blur radius and spread radius */
+    opacity: 0.95;
+}
+
+.index-about-section h2 {
+    font-family: "Anton", sans-serif;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .index-about-section {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    font-family: 'Anton', sans-serif;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    min-width: 200px;
+}
+
+@media (max-width: 600px) {
+    .info-card {
+        flex-basis: 100%;
+    }
+}
+/* image carousel styling */
+.carousel-container {
+    max-width: 100%; /* Ensure the container never goes past the width of the page */
+    overflow: hidden; /* Hide any content that overflows the container */
+}
+
+.carousel {
+    width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    margin-bottom: 75px;
+    margin-top: 75px; /* You can also add a top margin here if needed */
+    clear: both;
+}
+
+.carousel__track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel__slide {
+    width: 400px;
+    height: 300px;
+    flex: 0 0 auto;
+}
+
+.carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 600px) {
+    .carousel-container {
+        display: none;
+    }
+}
+
+/* index about author section styling */
+.index-profile {
+    width: 75%;
+    font-family: "Oswald", sans-serif;
+    font-size: large;
+    text-align: center;
+    background-color:  black;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.9); /* Increase the blur radius and spread radius */
+    opacity: 0.9;
+}
+
+.index-profile img {
+    padding: 5px;
+    width: 300px; /* Increase the width */
+    height: auto;
+    display: block;
+    margin: auto; /* center the image */
+}
+
+@media (max-width: 600px) {
+    .index-profile {
+        width: 100%; /* Make the author profile take up the full width of the page */
+    }
+}
+
+.image-container2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.image-container2 img {
+    max-height: 200px;
+    width: 400px;
+}
+/* featured product styling */
+
+.featured-product-title {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); 
+    font-family: "Rubik Scribble", sans-serif;
+    max-width: 800px; 
+    background-color:  black;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9); 
+}
+
+.featured-product-title p, .featured-product-title h2 {
+    font-family: "Anton", sans-serif;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Index Page Featured Products  */
+
+.index-featured-products {
+    font-family: "Anton", sans-serif;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 4;
+    border-radius: 5px;
+}
+
+
+.index-featured-products .product {
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 20px); 
+    height: 400px;
+    overflow: auto;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 5px;
+}
+
+.index-featured-products img {
+    width: 200px; 
+    height: auto;
+}
+
+/* CSS for mobile and small devices displaying the top 2 features*/
+@media only screen and (max-width: 480px) {
+    .index-featured-products, .featured-product-title {
+        display: none; /* Hide the featured products on small screens */
+    }
+}
+
+/* styling for register page */
+.user-registration-title {
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    width: 50%;
+
+}
+
+@media (max-width: 600px) {
+    .user-registration-title {
+        width: 100%;
+        margin-bottom: 10px; /* Make the images take up the full width of the page */
+    }
+}
+
+.user-registration {
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.user-registration label,
+.user-registration input {
+    display: block;
+    width: 250px;
+    margin-bottom: 1em;
+}
+/* CSS for mobile and small devices */
+@media only screen and (max-width: 480px) {
+    .user-registration {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+
+/* Styling for the product page */
+
+.category-title {
+    font-family: "Anton", sans-serif;
+    font-weight: 900;
+    background-color: #0f0736;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    margin-top: 1em;
+    max-width: 450px;
+    margin: 1em auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.product-page-title {
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px; 
+    height: auto; 
+    max-width: 50%; 
+    border-radius: 5px;
+    margin: 0 auto; 
+    display: block; 
+    overflow: auto; 
+    margin-top: 10px;
+    opacity: 0.9;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-page-title p {
+    font-family: "Roboto", sans-serif;
+    margin: 0; 
+    padding: 0; 
+}
+
+.product-page-welcome {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: rgb(68, 37, 117);
+    max-width: 600px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto; 
+    display: block; 
+}
+
+.product-page-disclaimer {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: rgb(16, 10, 44);
+    max-width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto; 
+    display: block; 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+@media (max-width: 600px) {
+    .product-page-disclaimer {
+        max-width: 100%;
+        overflow: auto; /* Add a scrollbar when the content overflows */
+        max-height: 350px; /* Make the disclaimer take up the full width of the page */
+    }
+
+    /* Style the scrollbar */
+    .product-page-disclaimer::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .product-page-disclaimer::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .product-page-disclaimer::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    .product-page-disclaimer::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}
+
+.product-category-title {
+    font-family: "Anton", sans-serif;
+    font-weight: 900;    
+    background-color: black;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    margin-top: 1em;
+    max-width: 450px;
+    margin: 1em auto; 
+    display: block; 
+    border-radius: 5px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    position: relative;
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px; 
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #000000;
+    display: flex; 
+    flex-direction: column;
+}
+
+.product-item img {
+    height: 200px;
+    width: 100%; 
+    object-fit: contain;
+}
+
+.product-title, .product-description, .product-price {
+    margin: 10px 0;
+}
+
+.product-item form {
+    margin-top: auto; 
+    width: 100%;
+}
+
+.add-to-basket {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* PRODUCT DETAIL styles */
+
+.product-detail-content {
+    font-family: "Oswald", sans-serif;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    margin: auto;
+    width: 70%;
+    height: auto;    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.product-detail-content img.product-detail-image {
+    width: 25%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+.product-detail-content .product-multi-img-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-detail-content img.product-multi-img {
+    max-width: 200px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    object-fit: cover; 
+}
+
+/* Styles for small screens */
+@media (max-width: 600px) {
+    .product-detail-content {
+        width: 100%;
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
+    .product-detail-content .product-multi-img-container {
+        flex-direction: column;
+    }
+
+    /* Add custom scrollbar */
+    .product-detail-content::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .product-detail-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .product-detail-content::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    .product-detail-content::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}
+
+.my-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+}
+
+.my-form-wrapper form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-form-wrapper label {
+    font-size: 24px;
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: center;
+}
+
+.my-form-wrapper input {
+    display: block;
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.my-form-wrapper input[type="submit"] {
+    font-size: 24px;
+}
+
+@media (max-width: 600px) {
+    .my-form-wrapper label, .my-form-wrapper input {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .my-form-wrapper input[type="submit"] {
+        font-size: 20px;
+    }
+}
+
+/* Styling for the further information section of index page */
+
+.further-info {
+    font-family: "Anton", sans-serif;
+    color: white;
+    background-color: rgb(20, 23, 49);
+    margin: 40px auto;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+@media only screen and (max-width: 480px) {
+    .further-info {
+        width: 90%; 
+    }
+}
+/* Contact form styling */
+
+.site-contact-form {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: rgb(16, 10, 44);
+    padding: 20px;
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
+    border-radius: 5px;
+}
+
+.site-contact-form input, .site-contact-form textarea {
+    width: 100%;  
+    box-sizing: border-box;  
+}
+
+@media only screen and (max-width: 480px) {
+    .site-contact-form {
+        width: 90%; 
+    }
+}
+
+/* Stripe form styling */
+
+.payment-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    margin-bottom: 10px;
+}
+
+#card-element {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#card-errors {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Checkout page styling */
+
+/* Checkout basket styling */
+.checkout-basket {
+    background-color: white;
+    color: black;
+    font-family: "Exo 2", sans-serif;
+    width: 50%; 
+    margin: 0 auto; 
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.checkout-basket ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.checkout-basket li {
+    margin-bottom: 20px; 
+}
+
+/* Style for input fields */
+.checkout-basket .form-row input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px) {
+    .checkout-basket {
+        width: 90%;
+        padding: 30px;
+        font-size: 1.2em;
+    }
+    .checkout-basket li {
+        font-size: 1.2em;
+    }
+}
+
+
+/* Payment.html styling */
+
+/* Payment Success (charge.html) styling */
+.payment-received-notice {
+    font-family: "Lobster", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: rgb(68, 37, 117);
+    padding: 20px;
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 480px) {
+    .payment-received-notice {
+        width: 85%; 
+    }
+}
+
+
+/* User dashboard styling */
+
+
+.dasboard-title {
+    font-family: "Anton", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: black;
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+}
+
+
+.dashboard-container {
+    font-family: "Anton", sans-serif;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    margin: 0 auto;
+    width: 90%; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap; 
+    opacity: 0.9;
+}
+
+.dashboard-container div {
+    flex: 1 0 200px; 
+    padding: 10px;
+    background-color: inherit;
+    text-align: center;
+}
+
+.dashboard-container div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-container div form input,
+.dashboard-container div form textarea,
+.dashboard-container div form select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+/* Styling for the footer page */
+.footer-container {
+    background-color: black;
+    color: white;
+    font-family: "Anton", sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+

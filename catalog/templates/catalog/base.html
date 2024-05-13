@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heavy Metal Machinery</title>
+    <!-- Set viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'catalog/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Site header -->
+    <div class="site-header"></div>
+    <!-- Navigation bar -->
+    <section class="site-nav">
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+                    {% if not user.is_authenticated %}
+                <li><a href="{% url 'login' %}"><i class="fa fa-key"></i> Login</a></li>
+                <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                    {% endif %}
+                <li><a href="{% url 'products' %}"><i class="fa fa-truck"></i> Products</a></li>
+                    {% if user.is_authenticated %}
+                <li><a href="{% url 'checkout' %}"><i class="fa fa-shopping-cart"></i> Checkout</a></li>
+                <li><a href="{% url 'dashboard' %}"><i class="fas fa-car-side"></i> Dashboard</a></li>
+                    {% endif %}
+            </ul>
+        </nav>
+    </section>
+    <!-- Content of the base page -->
+    
+    
+    <!-- Basket info -->
+    {% if user.is_authenticated %}
+    <div class="basket-info">
+        {% if basket.basketitem_set.count > 0 %}
+            <p>User: {{ request.user.username }}</p>
+            <p>Items in basket: {{ basket.basketitem_set.count }}</p>
+            <p>Total price: {{ basket.total_cost }}</p>
+        {% else %}
+            <p>No items in basket</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% block content %}
+
+
+    {% endblock %}
+
+    <!-- Site footer -->
+    {% block footer %}
+        <footer class="footer-container">
+           
+                <div class="footer-links">
+                    <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.amazon.com" target="_blank">
+                        <i class="fab fa-amazon"></i> Amazon
+                    </a>
+                    <a href="https://www.github.com">
+                        <i class="fab fa-github"></i> Github
+                    </a>
+                    
+                </div>
+            </footer>        
+{% endblock %}
+<!-- ... -->
+
+<!-- Include JavaScript Stripe file -->
+<script src="https://js.stripe.com/v3/"></script>
+<!-- Include jQuery file -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Include Bootstrap JavaScript file -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Include custom JavaScript file -->
+<script src="{% static 'catalog/js/script.js' %}"></script>
+
+</body>
+</html>
