@@ -26,10 +26,7 @@ if (track) {
     }, 5000);
 }
 
-
-
 // Stripe Js payment form 
-// To use this payment method live, you must switch to HTTPs to ensure secure data transfer
 
 var stripe = Stripe('your_live_secret_key_here');
 var elements = stripe.elements();
