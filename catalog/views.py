@@ -16,7 +16,7 @@ import stripe
 import requests
 from stripe.error import InvalidRequestError
 from .forms import CustomUserCreationForm
-from .models import Category, Product, Basket, BasketItem, ContactMessage, Sale, Order, OrderItem, UserProfile, Message
+from .models import Category, Product, Basket, BasketItem, Sale, Order, OrderItem, UserProfile, Message
 # Index page view
 
 
